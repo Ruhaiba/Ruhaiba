@@ -1,0 +1,40 @@
+import random
+numi = random.randint(100,999)
+for i in range(10):
+    def guess_me():
+        num = str(numi)
+        ret = ""
+        print(ret)
+        ret.replace(ret[0:],"")
+        eel = [num[0], num[1], num[2]]
+        c = "C"
+        a = "A"
+        b = "B"
+        user = input("Enter guess: ")
+        tryi = 0
+        if len(user) != 3:
+            print("Too small/big of a Input!")
+        if user[0] != num[0] and user[0] in eel:
+            ret = ret + b
+        elif user[0] != num[0] and user[0] not in eel:
+            ret = ret + a
+        else:
+            ret = ret + c
+        if user[1] != num[1] and user[1] in eel:
+            ret = ret + b
+        elif user[1] != num[1] and user[1] not in eel:
+            ret = ret + a
+        else:
+            ret = ret + c
+        if user[2] != num[2] and user[2] in eel:
+            ret = ret + b
+        elif user[2] != num[2] and user[2] not in eel:
+            ret = ret + a
+        else:
+            ret = ret + c
+        print(ret)
+        if tryi == 10 and ret != "CCC":
+            print("Sorry, the correct answer was", num)
+        elif ret == "CCC":
+            print("Wohoo! you won within", i , "tries!")
+    guess_me(
